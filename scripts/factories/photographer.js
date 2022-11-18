@@ -3,8 +3,7 @@ function photographerFactory(data) {
 
     const picture = `assets/photographers/${portrait}`;
 
-
-    console.log(test);
+    console.log('card');
 
     function getUserCardDOM() {
         const article = document.createElement( 'article' );
@@ -19,3 +18,5 @@ function photographerFactory(data) {
     return { name, picture, getUserCardDOM }
 
 }
+    console.log('retour');
+
