@@ -1,5 +1,5 @@
 function photographerFactory(data) {
-    const { name, portrait, city, country, id, tagline } = data;
+    const { name, portrait, city, country, id, tagline, price } = data;
 
     const picture = `assets/photographers/${portrait}`;
 
@@ -17,6 +17,7 @@ function photographerFactory(data) {
         h3.textContent = `${city}, ${country}`;
         const p = document.createElement('p');
         p.textContent = tagline;
+        
         lien.appendChild(img);
         lien.appendChild(h2);
         article.appendChild(lien);
