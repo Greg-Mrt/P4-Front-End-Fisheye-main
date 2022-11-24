@@ -4,19 +4,6 @@
     const fichierjson  = await response.json();
 
    console.log('photos');
-        // Penser à remplacer par les données récupérées dans le json
-        // const photographers = [
-        //     {
-        //         "name": "Ma data test",
-        //         "id": 1,
-        //         "city": "Paris",
-        //         "country": "France",
-        //         "tagline": "Ceci est ma data test",
-        //         "price": 400,
-        //         "portrait": "account.png"
-        //     },
-        // ]
-        // et bien retourner le tableau photographers seulement une fois
         return ({
             photographers: fichierjson.photographers})
     }

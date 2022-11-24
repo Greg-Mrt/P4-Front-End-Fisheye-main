@@ -19,7 +19,7 @@ function photographerFactory(data) {
         slogan.textContent = tagline;
         slogan.classList.add("slogan");
         const prix = document.createElement('p');
-        prix.textContent = price," €/an";
+        prix.textContent = price+" €/jour";
         prix.classList.add("prix");
         lien.appendChild(img);
         lien.appendChild(h2);
