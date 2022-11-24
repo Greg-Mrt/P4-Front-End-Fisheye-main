@@ -15,14 +15,18 @@ function photographerFactory(data) {
         h2.textContent = name;
         const h3 = document.createElement('h3');
         h3.textContent = `${city}, ${country}`;
-        const p = document.createElement('p');
-        p.textContent = tagline;
-        
+        const slogan = document.createElement('p');
+        slogan.textContent = tagline;
+        slogan.classList.add("slogan");
+        const prix = document.createElement('p');
+        prix.textContent = price," €/an";
+        prix.classList.add("prix");
         lien.appendChild(img);
         lien.appendChild(h2);
         article.appendChild(lien);
         article.appendChild(h3);
-        article.appendChild(p);
+        article.appendChild(slogan);
+        article.appendChild(prix);
         return (article);
     }
     return { name, picture, getUserCardDOM }

@@ -63,8 +63,14 @@ a{
     object-fit:cover;
 }
 
-.photographer_section article p {
+.slogan {
     color: #1d1d1d;
     font-size: 11px;
     margin: 5px;
+}
+
+.prix{
+    color: grey;
+    font-size: 10px;
+    margin: 0px;
 }
