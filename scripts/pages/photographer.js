@@ -2,5 +2,20 @@
 let params = (new URL(document.location)).searchParams;
 let id = params.get('id');
 
-console.log(id);
 
+async function getPhotographers() {
+const response = await fetch('/data/photographers.json')
+const fichierjson  = await response.json();
+return fichierjson.photographers;
+}
+
+async function init(){
+const photographers = await getPhotographers();
+const profil = photographers.find(photo => photo.id == id);
+console.log(profil);
+if(profil==undefined){
+    window.location.href="/"
+}
+}
+
+init();
