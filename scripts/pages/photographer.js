@@ -24,15 +24,15 @@ async function init(){
   if(profil==undefined){
     window.location.href="/"
   }
-  const photographerInfo = document.querySelector(".photographer_section");
+  const photographerInfo = document.querySelector(".photographer_profile");
   const photographeHeader = document.createElement("article");
   const picture = `assets/photographers/${profil.portrait}`;
   const img = document.createElement('img');
   img.setAttribute("src", picture);
   let info = `<h1 class ="photographer_name">${profil.name}</h1>
-            <p class="photographer_location>${profil.city} , ${profil.country}</p>
-            <p class="photographer_devise>${profil.tagline}</p>
-          <div class="profilePicture"> <img src="assets/photographers/${profil.portrait}"></div>
+            <p class="photographer_location">${profil.city}, ${profil.country}</p>
+            <p class="photographer_devise">${profil.tagline}</p>
+          <div> <img src="assets/photographers/${profil.portrait}" class="profilePicture"></div>
             `;
   photographerInfo.appendChild(photographeHeader);
   photographeHeader.innerHTML = info;

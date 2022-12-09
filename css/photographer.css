@@ -81,14 +81,37 @@ form input {
     justify-content: space-between;
 }
 
+.photographer_name{
+    font-size: 40px;
+    color: #D3573C;
+    margin: 0px;
+}
+
+.photographer_profile{
+    background-color: #FAFAFA;
+    height: 300px;
+    margin: 0 100px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
 .profilePicture{
     height: 200px;
     width: 200px;
     border-radius: 50%;
     object-fit:cover;
+    
 }
 
-.photographer_section{
-    display: flex;
-    
+.photographer_devise {
+    color: #959595;
+    font-size: 11px;
+    margin: 5px 5px 5px 0px;  
+}
+
+.photographer_location{
+    color: #901C1C;
+    font-size: 14px;
+    margin: 0px;
 }
