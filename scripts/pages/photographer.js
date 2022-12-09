@@ -32,8 +32,7 @@ async function init(){
   let info = `<h1 class ="photographer_name">${profil.name}</h1>
             <p class="photographer_location">${profil.city}, ${profil.country}</p>
             <p class="photographer_devise">${profil.tagline}</p>
-          <div> <img src="assets/photographers/${profil.portrait}" class="profilePicture"></div>
-            `;
+          <div> <img src="assets/photographers/${profil.portrait}" class="profilePicture"></div>`;
   photographerInfo.appendChild(photographeHeader);
   photographeHeader.innerHTML = info;
 
@@ -42,6 +41,7 @@ async function init(){
   let medias = mediaSource.filter((m) => 
     m.photographerId == idUrl
   )
+  
   medias = medias.sort(function (a, b) {
     if (a.title < b.title) {
       return -1;
@@ -51,7 +51,13 @@ async function init(){
     }
     return 0;
   });
-    console.log(medias);
-}
+  
+  medias.forEach((medias) => {
+    const photoCard = mediasFactory(medias);
+    const MediasCardDOM = photoCard.getMediasDOM();
+    mediasSection.appendChild(MediasCardDOM);
+});
+
+};
 
 init();

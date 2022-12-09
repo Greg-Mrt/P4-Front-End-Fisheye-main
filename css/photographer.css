@@ -101,6 +101,8 @@ form input {
     width: 200px;
     border-radius: 50%;
     object-fit:cover;
+    position: absolute;
+    margin-right: 10%;
     
 }
 
