@@ -29,7 +29,7 @@ function photographerFactory(data) {
         article.appendChild(prix);
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+    return {name, picture, getUserCardDOM }
 
 }
     console.log('retour');

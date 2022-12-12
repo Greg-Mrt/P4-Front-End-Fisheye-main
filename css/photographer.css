@@ -19,6 +19,8 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
+    position:absolute;
+
 }
 
 .modal {
@@ -85,15 +87,13 @@ form input {
     font-size: 40px;
     color: #D3573C;
     margin: 0px;
+    position: relative;
 }
 
 .photographer_profile{
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
 }
 
 .profilePicture{

@@ -1,27 +1,24 @@
 function mediasFactory(data) {
     const {image, title, likes} = data;
 
-    const picture = `assets/photographers/${image}`;
+    const photos = `assets/images/${image}`;
 
     console.log('card');
 
     function getMediasDOM() {
         const article = document.createElement( 'article' );
-        const img = document.createElement( 'img' );
-        img.setAttribute("src", picture)
+        const image = document.createElement( 'img' );
+        image.setAttribute("src", photos)
         const h2 = document.createElement( 'h2' );
         h2.textContent = title;
-        const likes = document.createElement( 'h2' );
+        const jaime = document.createElement( 'h2' );
         h2.textContent = likes;
-        lien.appendChild(img);
-        lien.appendChild(h2);
-        article.appendChild(lien);
-        article.appendChild(h3);
-        article.appendChild(slogan);
-        article.appendChild(prix);
+        article.appendChild(image);
+        article.appendChild(h2);
+        article.appendChild(jaime);
         return (article);
     }
-    return { title, picture, likes, getMediasDOM }
+    return {getMediasDOM}
 
 }
     console.log('retour');

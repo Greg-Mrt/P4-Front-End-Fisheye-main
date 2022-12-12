@@ -42,6 +42,7 @@ async function init(){
     m.photographerId == idUrl
   )
   
+  // je trie les médias par ordre alphabétique
   medias = medias.sort(function (a, b) {
     if (a.title < b.title) {
       return -1;
@@ -52,11 +53,14 @@ async function init(){
     return 0;
   });
   
+  console.log(medias);
+
+
+  //j'affiche les médias
   medias.forEach((medias) => {
     const photoCard = mediasFactory(medias);
     const MediasCardDOM = photoCard.getMediasDOM();
-    mediasSection.appendChild(MediasCardDOM);
-});
+  });
 
 };
 
