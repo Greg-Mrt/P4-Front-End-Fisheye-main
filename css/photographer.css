@@ -19,8 +19,6 @@
     background-color: #901C1C;
     border-radius: 5px;
     cursor: pointer;
-    position:absolute;
-
 }
 
 .modal {
@@ -78,22 +76,28 @@ form input {
 }
 
 .pictures {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 50px;
+    margin-top: 100px;
+    width: auto;
+    margin: 75px;
 }
 
 .photographer_name{
     font-size: 40px;
     color: #D3573C;
     margin: 0px;
-    position: relative;
 }
 
 .photographer_profile{
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .profilePicture{
@@ -101,9 +105,7 @@ form input {
     width: 200px;
     border-radius: 50%;
     object-fit:cover;
-    position: absolute;
-    margin-right: 10%;
-    
+    margin-right: 0px;
 }
 
 .photographer_devise {
@@ -116,4 +118,16 @@ form input {
     color: #901C1C;
     font-size: 14px;
     margin: 0px;
+}
+
+.photos{
+    height: 300px;
+    width: 300px;
+    object-fit:cover;
+}
+
+.videos{
+    height: 300px;
+    width: 300px;
+    object-fit:cover;
 }

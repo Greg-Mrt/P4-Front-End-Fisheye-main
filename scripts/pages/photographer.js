@@ -29,12 +29,14 @@ async function init(){
   const picture = `assets/photographers/${profil.portrait}`;
   const img = document.createElement('img');
   img.setAttribute("src", picture);
+  img.classList.add("profilePicture");
   let info = `<h1 class ="photographer_name">${profil.name}</h1>
             <p class="photographer_location">${profil.city}, ${profil.country}</p>
-            <p class="photographer_devise">${profil.tagline}</p>
-          <div> <img src="assets/photographers/${profil.portrait}" class="profilePicture"></div>`;
-  photographerInfo.appendChild(photographeHeader);
+            <p class="photographer_devise">${profil.tagline}</p>`;
+  photographerInfo.prepend(photographeHeader);
   photographeHeader.innerHTML = info;
+  photographerInfo.appendChild(img);
+
 
   const mediaSource = await getMedia();
   // je récupère les médias liés à l'id de l'URL
@@ -58,8 +60,10 @@ async function init(){
 
   //j'affiche les médias
   medias.forEach((medias) => {
-    const photoCard = mediasFactory(medias);
+    const photoCard = mediasFactory(medias,profil.name);
     const MediasCardDOM = photoCard.getMediasDOM();
+    console.log(MediasCardDOM);
+    document.querySelector(".pictures").appendChild(MediasCardDOM);
   });
 
 };
