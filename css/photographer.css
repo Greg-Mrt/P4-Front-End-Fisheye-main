@@ -31,7 +31,7 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
-    position: fixed;
+    position: absolute;
     top: 60px;
     left: 50px;
     right: 50px;
@@ -80,12 +80,16 @@ form input {
 }
 
 .pictures {
-    display: flex-wrap ;
+    display: flex ;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
     margin-top: 100px;
     width: auto;
-    margin: 75px;
+    margin-right: 100px;
+    margin-left: 100px;
 }
 
 .photographer_name{
