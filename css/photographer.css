@@ -31,6 +31,10 @@
     justify-content: space-between;
     padding: 35px;
     margin: auto;
+    position: fixed;
+    top: 60px;
+    left: 50px;
+    right: 50px;
 }
 
 .modal header {
@@ -76,7 +80,7 @@ form input {
 }
 
 .pictures {
-    display: grid;
+    display: flex-wrap ;
     grid-template-columns: 1fr 1fr 1fr;
     gap: 50px;
     margin-top: 100px;
@@ -124,10 +128,12 @@ form input {
     height: 300px;
     width: 300px;
     object-fit:cover;
+    border-radius: 4px;
 }
 
 .videos{
     height: 300px;
     width: 300px;
     object-fit:cover;
+    border-radius: 4px;
 }
