@@ -13,12 +13,25 @@
         <header>
           <img src="assets/images/logo.png" class="logo" />
         </header>
+
         <main id="main">
           <section class="photographer_profile">
             <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
           </section>
+          
+          
           <div class="pictures">
           </div>
+          
+          <div           
+          id="lightbox"
+          class="lightbox">
+            <img src="assets/icons/close.svg" onclick="closeLightbox()" />
+            <button class="lightbox__next">Suivant</button>
+            <button class="lightbox__prev">Précédent</button>
+            <div class="lightbox__container">
+            </div>
+          </div>        
         </main>
 
         <div id="contact_modal">
@@ -31,25 +44,25 @@
               <div>
                 <label>Prénom</label>
                 <input
-                id="Prenom"
+                id="prenom"
                 />
               </div>
               <div>
                 <label>Nom</label>
                 <input
-                id="Nom"
+                id="nom"
                 />
               </div>
               <div>
                 <label>Email</label>
                 <input
-                id="Email"
+                id="email"
                 />
               </div>              
               <div>
                 <label>Votre message</label>
                 <input
-                id="Message"
+                id="message"
                 />
               </div>
               <button 
@@ -64,6 +77,7 @@
         <script src="/scripts/factories/medias.js"></script>
         <script src="/scripts/pages/photographer.js"></script>
         <script src="/scripts/utils/contactForm.js"></script>
+        <script src="/scripts/utils/lightbox.js"></script>
 
   </body>
 

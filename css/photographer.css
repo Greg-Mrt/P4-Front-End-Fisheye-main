@@ -141,3 +141,15 @@ form input {
     object-fit:cover;
     border-radius: 4px;
 }
+
+.lightbox__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0 50px;
+  }
+
+  #lightbox {
+    display: none;
+  }
