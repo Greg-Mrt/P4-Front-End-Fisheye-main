@@ -22,17 +22,20 @@
           
           <div class="pictures">
           </div>
-          
+        </main>
+
+
           <div           
           id="lightbox"
           class="lightbox">
-            <img src="assets/icons/close.svg" onclick="closeLightbox()" />
-            <button class="lightbox__next">Suivant</button>
-            <button class="lightbox__prev">Précédent</button>
-            <div class="lightbox__container">
+          <img class="closeLightbox" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()" />
+          <img class="arrow_left" src="assets/icons/left.svg"/>
+          <img src="assets/icons/right.svg" class="arrow_right"/>
+            <div class="lightbox_container">
+              <img src="assets/images/Nabeel/Portrait_AfternoonBreak.jpg">
             </div>
           </div>        
-        </main>
+        
 
         <div id="contact_modal">
           <div class="modal">
@@ -74,10 +77,10 @@
           </div>
         </div>
 
+        <script src="/scripts/utils/lightbox.js"></script>
         <script src="/scripts/factories/medias.js"></script>
         <script src="/scripts/pages/photographer.js"></script>
         <script src="/scripts/utils/contactForm.js"></script>
-        <script src="/scripts/utils/lightbox.js"></script>
 
   </body>
 
