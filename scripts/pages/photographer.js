@@ -62,8 +62,10 @@ async function init(){
   medias.forEach((medias) => {
     const photoCard = mediasFactory(medias,profil.name);
     const MediasCardDOM = photoCard.getMediasDOM();
+    const MediasCardLightbox = photoCard.getMediasLightbox();
     console.log(MediasCardDOM);
     document.querySelector(".pictures").appendChild(MediasCardDOM);
+    document.querySelector(".lightbox_container").appendChild(MediasCardLightbox);
   });
 
 };
