@@ -52,7 +52,7 @@ function mediasFactory(data,name) {
             const video = document.createElement('video');
             const source = document.createElement ('source');
             source.setAttribute("src", medias);
-            video.className = 'videos';
+            video.className = 'photos_lightbox';
             video.appendChild(source);
             media.appendChild(video);
         }
