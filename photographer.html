@@ -11,37 +11,30 @@
 
   <body>
         <header>
-          <img src="assets/images/logo.png" class="logo" />
+          <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="logo" role="img" alt="logo"/></a>
         </header>
 
-        <main id="main">
-          <section class="photographer_profile">
-            <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
+        <main id="main" aria-label="contenu principal" role="main">
+          <section class="photographer_profile" aria-label="description photographe" role="presentation">
+            <button class="contact_button" onclick="displayModal()" aria-label="bouton de contact" role="button" >Contactez-moi</button>
           </section>
-          
-          
-          <div class="pictures">
+          <div class="pictures" aria-label="photo de profil" role="img">
           </div>
         </main>
 
-
-          <div           
-          id="lightbox"
-          class="lightbox">
-          <img class="closeLightbox" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()" />
-          <img class="arrow_left" src="assets/icons/left.svg"/>
-          <img src="assets/icons/right.svg" class="arrow_right"/>
-            <div class="lightbox_container">
-              <!-- <img src="assets/images/Nabeel/Portrait_AfternoonBreak.jpg"> -->
+          <div id="lightbox" class="lightbox">
+          <img class="closeLightbox" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()" aria-label="bouton de fermeture" role="fermeture"/>
+          <img class="arrow_left" src="assets/icons/left.svg" aria-label="media précédent" role="navigation" alt="media précédent"/>
+          <img src="assets/icons/right.svg" class="arrow_right" aria-label="media suivant" role="navigation" alt="media suivant"/>
+            <div class="lightbox_container" aria-label="affichage des medias" role="img">
             </div>
           </div>        
         
-
-        <div id="contact_modal">
+        <div id="contact_modal" >
           <div class="modal">
             <header>
               <h2>Contactez-moi</h2>
-              <img src="assets/icons/close.svg" onclick="closeModal()" />
+              <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="bouton de fermeture" role="fermeture"/>
             </header>
             <form>
               <div>

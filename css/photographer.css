@@ -170,7 +170,7 @@ form input {
    }
 
   #lightbox {
-    /* display: none; */
+    display: none;
   }
 
   .closeLightbox{

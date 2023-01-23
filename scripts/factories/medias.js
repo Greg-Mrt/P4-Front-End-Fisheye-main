@@ -1,3 +1,5 @@
+let index=0
+
 function mediasFactory(data,name) {
     const {image, video, title, likes} = data;
 
@@ -11,13 +13,16 @@ function mediasFactory(data,name) {
     medias = `assets/images/${name.split(" ")[0]}/${video}`;
     }
 
+
     function getMediasDOM() {
         const article = document.createElement( 'article' );
         if (image!=undefined){ 
             const image = document.createElement( 'img' );
             image.setAttribute("src", medias);
             image.className = 'photos';
-            image.addEventListener("click", displayLightbox)
+            image.addEventListener("click", () => {
+                displayLightbox(index++)
+            })
             article.appendChild(image);
         }
         else {
@@ -25,10 +30,14 @@ function mediasFactory(data,name) {
             const source = document.createElement ('source');
             source.setAttribute("src", medias);
             video.className = 'videos';
-            video.addEventListener("click", displayLightbox)
+            video.addEventListener("click", () => {
+                displayLightbox(index++)
+            })            
             video.appendChild(source);
             article.appendChild(video);
         }
+        index=index+1
+        console.log(index)
         const h2 = document.createElement( 'div' );
         h2.textContent = `${title} ${likes}`;
         const img = document.createElement( 'img' );

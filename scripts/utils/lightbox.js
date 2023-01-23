@@ -1,6 +1,7 @@
-function displayLightbox() {
+function displayLightbox(num=0) {
     const lightbox = document.getElementById("lightbox");
 	lightbox.style.display = "block";
+    gotoslide(num);
 }
 
 function closeLightbox() {
@@ -8,22 +9,8 @@ function closeLightbox() {
     lightbox.style.display = "none";
 }
 
-// var index = 1;
-// showImg(index);
 
-// function showImg(n) {
-//    let getMedias = Array.from(document.getElementsByClassName('pictures'));
-// }
-
-// function nextImg(n) {
-// showImg(index += n);
-// }
-
-// function prevImg(n) {
-// showImg(index = n);
-// }
-
-let compteur = 0
+let compteur = 3
 let medias, slides, slideWidth
 medias = document.querySelector(".lightbox_container")
 
@@ -66,11 +53,27 @@ function slidePrev(){
     let photos = document.querySelectorAll(".media_lightbox")
 
     compteur--
-    console.log(compteur);
     if(compteur < 0){
         compteur = photos.length - 1
     }
-    console.log(compteur);
+    let decal = -slideWidth * compteur
+
+    photos.forEach(element => {
+        element.style.transform = `translateX(${decal}px)`;
+    });
+}
+
+function gotoslide(num) {
+    console.log("test")
+    let photos = document.querySelectorAll(".media_lightbox")
+
+    compteur=num
+    if(compteur < 0){
+        compteur = photos.length - 1
+    }
+    if(compteur >= photos.length){
+        compteur=0
+    }
     let decal = -slideWidth * compteur
 
     photos.forEach(element => {
