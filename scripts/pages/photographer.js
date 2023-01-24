@@ -63,10 +63,18 @@ async function init(){
     const photoCard = mediasFactory(medias,profil.name);
     const MediasCardDOM = photoCard.getMediasDOM();
     const MediasCardLightbox = photoCard.getMediasLightbox();
-    console.log(MediasCardDOM);
     document.querySelector(".pictures").appendChild(MediasCardDOM);
     document.querySelector(".lightbox_container").appendChild(MediasCardLightbox);
   });
+
+  //gestion de l'ouverture de la lightbox
+  let clickLightbox = document.querySelectorAll(".photos")
+  for(let i = 0; i<clickLightbox.length;i++)
+  {
+    clickLightbox[i].addEventListener("click", () => {
+      displayLightbox(i)
+    })
+  }
 
 };
 

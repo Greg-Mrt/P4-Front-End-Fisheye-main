@@ -1,5 +1,3 @@
-let index=0
-
 function mediasFactory(data,name) {
     const {image, video, title, likes} = data;
 
@@ -20,24 +18,16 @@ function mediasFactory(data,name) {
             const image = document.createElement( 'img' );
             image.setAttribute("src", medias);
             image.className = 'photos';
-            image.addEventListener("click", () => {
-                displayLightbox(index++)
-            })
             article.appendChild(image);
         }
         else {
             const video = document.createElement('video');
             const source = document.createElement ('source');
             source.setAttribute("src", medias);
-            video.className = 'videos';
-            video.addEventListener("click", () => {
-                displayLightbox(index++)
-            })            
+            video.className = 'videos';        
             video.appendChild(source);
             article.appendChild(video);
         }
-        index=index+1
-        console.log(index)
         const h2 = document.createElement( 'div' );
         h2.textContent = `${title} ${likes}`;
         const img = document.createElement( 'img' );

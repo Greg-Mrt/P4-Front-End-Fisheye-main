@@ -1,6 +1,7 @@
 function displayLightbox(num=0) {
     const lightbox = document.getElementById("lightbox");
 	lightbox.style.display = "block";
+    console.log(num)
     gotoslide(num);
 }
 
@@ -10,7 +11,7 @@ function closeLightbox() {
 }
 
 
-let compteur = 3
+let compteur = 0
 let medias, slides, slideWidth
 medias = document.querySelector(".lightbox_container")
 
@@ -37,16 +38,18 @@ let photos = document.querySelectorAll(".media_lightbox")
 
 function slideNext(){
     let photos = document.querySelectorAll(".media_lightbox")
-
+    console.log(compteur)
     compteur++
     if(compteur == photos.length){
         compteur=0
     }
+    slideWidth = medias.getBoundingClientRect().width
     let decal = -slideWidth*compteur
 
     photos.forEach(element => {
         element.style.transform = `translateX(${decal}px)`;
     });
+
 }
 
 function slidePrev(){
@@ -56,6 +59,7 @@ function slidePrev(){
     if(compteur < 0){
         compteur = photos.length - 1
     }
+    slideWidth = medias.getBoundingClientRect().width
     let decal = -slideWidth * compteur
 
     photos.forEach(element => {
@@ -64,7 +68,6 @@ function slidePrev(){
 }
 
 function gotoslide(num) {
-    console.log("test")
     let photos = document.querySelectorAll(".media_lightbox")
 
     compteur=num
@@ -74,6 +77,7 @@ function gotoslide(num) {
     if(compteur >= photos.length){
         compteur=0
     }
+    slideWidth = medias.getBoundingClientRect().width
     let decal = -slideWidth * compteur
 
     photos.forEach(element => {
