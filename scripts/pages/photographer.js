@@ -4,25 +4,25 @@ let idUrl = params.get('id');
 
 async function getPhotographers() {
   const response = await fetch('/data/photographers.json')
-  const fichierjson  = await response.json();
+  const fichierjson = await response.json();
   return fichierjson.photographers;
 }
 async function getMedia() {
   const response = await fetch('/data/photographers.json')
-  const fichierjson  = await response.json();
+  const fichierjson = await response.json();
   return fichierjson.media;
 }
 
-async function init(){
+async function init() {
   const photographers = await getPhotographers();
-// je récupère le photographe lié à l'id de l'URL
-  const profil = photographers.find((photo) => 
+  // je récupère le photographe lié à l'id de l'URL
+  const profil = photographers.find((photo) =>
     photo.id == idUrl
   );
-  console.log(profil);
+
   // si pas (ou mauvais) id je reviens sur la page index
-  if(profil==undefined){
-    window.location.href="/"
+  if (profil == undefined) {
+    window.location.href = "/"
   }
   const photographerInfo = document.querySelector(".photographer_profile");
   const photographeHeader = document.createElement("article");
@@ -37,13 +37,12 @@ async function init(){
   photographeHeader.innerHTML = info;
   photographerInfo.appendChild(img);
 
-
   const mediaSource = await getMedia();
   // je récupère les médias liés à l'id de l'URL
-  let medias = mediaSource.filter((m) => 
+  let medias = mediaSource.filter((m) =>
     m.photographerId == idUrl
   )
-  
+
   // je trie les médias par ordre alphabétique
   medias = medias.sort(function (a, b) {
     if (a.title < b.title) {
@@ -54,13 +53,10 @@ async function init(){
     }
     return 0;
   });
-  
-  console.log(medias);
-
 
   //j'affiche les médias
   medias.forEach((medias) => {
-    const photoCard = mediasFactory(medias,profil.name);
+    const photoCard = mediasFactory(medias, profil.name);
     const MediasCardDOM = photoCard.getMediasDOM();
     const MediasCardLightbox = photoCard.getMediasLightbox();
     document.querySelector(".pictures").appendChild(MediasCardDOM);
@@ -69,13 +65,20 @@ async function init(){
 
   //gestion de l'ouverture de la lightbox
   let clickLightbox = document.querySelectorAll(".photos")
-  for(let i = 0; i<clickLightbox.length;i++)
-  {
+  for (let i = 0; i < clickLightbox.length; i++) {
     clickLightbox[i].addEventListener("click", () => {
       displayLightbox(i)
     })
   }
 
+  //j'affiche les élements dans la likebox
+  const photographerLikesBox = document.querySelector(".box");
+  const photographerLikes = document.createElement("div");
+  let infoLikes = `<div class="boxInfos"> 
+  <div class="">2000 <img src="assets/icons/heart-solid.svg" width="18px" height="18px"></div>
+  <div class="boxPrice">${profil.price}€ / jour</div></div>`;
+  photographerLikesBox.prepend(photographerLikes);
+  photographerLikes.innerHTML = infoLikes;
 };
 
 init();

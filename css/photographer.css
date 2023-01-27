@@ -104,7 +104,6 @@ form input {
     margin: 0 100px;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -136,9 +135,13 @@ form input {
 }
 
 .media_infos{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     color: #901C1C;
     font-size: 20px;
     margin: 0px;
+
 }
 
 .videos{
@@ -205,4 +208,29 @@ form input {
     height:100%;
     object-fit: cover;
 
+  }
+
+  .box{
+    position :fixed;
+    bottom: 0;
+    right: 30px;
+    width: 270px;
+    height: 70PX;
+    background-color: #D3573C; 
+    border-radius: 4px 4px 0 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .boxInfos{
+    margin-left: 20px;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+
+  .boxPrice{
+    position: absolute;
+    right: 20px;
+    bottom: 23px;
   }
