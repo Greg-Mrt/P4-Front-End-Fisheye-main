@@ -71,14 +71,24 @@ async function init() {
     })
   }
 
+
+  //calcul des likes
+    let totalLikes = 0
+    medias.forEach((media) => {
+      totalLikes += media.likes
+    });
+
   //j'affiche les élements dans la likebox
   const photographerLikesBox = document.querySelector(".box");
   const photographerLikes = document.createElement("div");
   let infoLikes = `<div class="boxInfos"> 
-  <div class="">2000 <img src="assets/icons/heart-solid.svg" width="18px" height="18px"></div>
+  <div class=""><span class="totalLikes">${totalLikes}</span> <img src="assets/icons/heart-solid.svg" width="18px" height="18px"></div>
   <div class="boxPrice">${profil.price}€ / jour</div></div>`;
   photographerLikesBox.prepend(photographerLikes);
   photographerLikes.innerHTML = infoLikes;
+
+
+
 };
 
 init();

@@ -28,13 +28,21 @@ function mediasFactory(data,name) {
             video.appendChild(source);
             article.appendChild(video);
         }
-        const h2 = document.createElement( 'div' );
-        h2.textContent = `${title} ${likes}`;
+        const legende = document.createElement( 'div' );
+        const titre = document.createElement('span');
+        titre.classList.add('title');
+        titre.textContent=title;
+        const nbLikes = document.createElement('span');
+        nbLikes.classList.add('likes');
+        nbLikes.textContent=likes;
         const img = document.createElement( 'img' );
         img.setAttribute("src", coeur);
-        h2.classList.add("media_infos");
-        article.appendChild(h2);
-        article.appendChild(img);
+        img.addEventListener("click", addLike);
+        legende.classList.add("media_infos");
+        legende.appendChild(titre);
+        legende.appendChild(nbLikes);
+        legende.appendChild(img);
+        article.appendChild(legende);
         return (article);
     }
 
@@ -64,3 +72,10 @@ function mediasFactory(data,name) {
 
     return {getMediasDOM, getMediasLightbox}
 }
+
+function addLike(){
+    let like = document.querySelector(".totalLikes").textContent;
+    like=parseInt(like)+1;
+    document.querySelector(".totalLikes").textContent=like;
+    console.log(like)
+  }
