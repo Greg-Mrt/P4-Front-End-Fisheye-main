@@ -3,14 +3,10 @@ function displayModal() {
 	modal.style.display = "block";
 }
 
-console.log('ouverture');
-
 function closeModal() {
     const modal = document.getElementById("contact_modal");
     modal.style.display = "none";
 }
-
-console.log('fermeture');
 
 //check "prénom" data
 function FirstName () {

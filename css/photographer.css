@@ -102,10 +102,11 @@ form input {
     background-color: #FAFAFA;
     height: 300px;
     margin: 0 100px;
-    padding: 15px;
+    padding: 0px 20px 0px 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 .profilePicture{
@@ -234,4 +235,8 @@ form input {
     position: absolute;
     right: 20px;
     bottom: 23px;
+  }
+
+  .title{
+    flex-grow: 1;
   }

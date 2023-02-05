@@ -1,7 +1,6 @@
 function displayLightbox(num=0) {
     const lightbox = document.getElementById("lightbox");
 	lightbox.style.display = "block";
-    console.log(num)
     gotoslide(num);
 }
 
@@ -38,7 +37,6 @@ let photos = document.querySelectorAll(".media_lightbox")
 
 function slideNext(){
     let photos = document.querySelectorAll(".media_lightbox")
-    console.log(compteur)
     compteur++
     if(compteur == photos.length){
         compteur=0
