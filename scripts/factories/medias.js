@@ -81,8 +81,9 @@ function addLike() {
     document.querySelector(".totalLikes").textContent = like;
 }
 
-function photoLike() {
-    let addHeart = document.querySelector(".coeur").previousSibling.textContent;
+function photoLike(e) {
+    let addHeart = e.target.previousSibling.textContent;
     addHeart = parseInt(addHeart) + 1;
-    document.querySelector(".coeur").previousSibling.textContent = addHeart;
+    e.target.previousSibling.textContent = addHeart;
 }
+

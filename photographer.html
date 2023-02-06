@@ -2,82 +2,85 @@
 <html>
 
 <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
-    <meta charset="utf-8">
-    <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
-    <title>Fisheye - photographe </title>
+  <link href="css/style.css" rel="stylesheet" type="text/css" />
+  <meta charset="utf-8">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
+  <title>Fisheye - photographe </title>
 </head>
 
-  <body>
-        <header>
-          <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="logo" role="img" alt="logo"/></a>
-        </header>
+<body>
+  <header>
+    <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="logo" role="img" alt="logo" /></a>
+  </header>
 
-        <main id="main" aria-label="contenu principal" role="main">
-          <section class="photographer_profile" aria-label="description photographe" role="presentation">
-            <button class="contact_button" onclick="displayModal()" aria-label="bouton de contact" role="button" >Contactez-moi</button>
-          </section>
-          <div class="pictures" aria-label="photo de profil" role="img">
-          </div>
-        </main>
+  <main id="main" aria-label="contenu principal" role="main">
+    <section class="photographer_profile" aria-label="description photographe" role="presentation">
+      <button class="contact_button" onclick="displayModal()" aria-label="bouton de contact"
+        role="button">Contactez-moi</button>
+    </section>
+    <div class="pictures" aria-label="photo de profil" role="img">
+    </div>
+    <div class="custom-select">
+      <select name="" id="">
+          <option value="1">Titre</option>
+          <option value="2">Date</option>
+          <option value="3">Popularité</option>
+      </select>
+    </div>    
+  </main>
 
-          <div id="lightbox" class="lightbox">
-          <img class="closeLightbox" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()" aria-label="bouton de fermeture" role="fermeture"/>
-          <img class="arrow_left" src="assets/icons/left.svg" aria-label="media précédent" role="navigation" alt="media précédent"/>
-          <img src="assets/icons/right.svg" class="arrow_right" aria-label="media suivant" role="navigation" alt="media suivant"/>
-            <div class="lightbox_container" aria-label="affichage des medias" role="img">
-            </div>
-          </div>        
 
-          <div class="box">
-          </div>
-        
-        <div id="contact_modal" >
-          <div class="modal">
-            <header>
-              <h2>Contactez-moi</h2>
-              <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="bouton de fermeture" role="fermeture"/>
-            </header>
-            <form>
-              <div>
-                <label>Prénom</label>
-                <input
-                id="prenom"
-                />
-              </div>
-              <div>
-                <label>Nom</label>
-                <input
-                id="nom"
-                />
-              </div>
-              <div>
-                <label>Email</label>
-                <input
-                id="email"
-                />
-              </div>              
-              <div>
-                <label>Votre message</label>
-                <input
-                id="message"
-                />
-              </div>
-              <button 
-              class="contact_button"
-              id="submit">
-                Envoyer
-              </button>
-            </form>
-          </div>
+  <div id="lightbox" class="lightbox">
+    <img class="closeLightbox" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()"
+      aria-label="bouton de fermeture" role="fermeture" />
+    <img class="arrow_left" src="assets/icons/left.svg" aria-label="media précédent" role="navigation"
+      alt="media précédent" />
+    <img src="assets/icons/right.svg" class="arrow_right" aria-label="media suivant" role="navigation"
+      alt="media suivant" />
+    <div class="lightbox_container" aria-label="affichage des medias" role="img">
+    </div>
+  </div>
+
+
+  <div class="box">
+  </div>
+
+  <div id="contact_modal">
+    <div class="modal">
+      <header>
+        <h2>Contactez-moi</h2>
+        <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="bouton de fermeture" role="fermeture" />
+      </header>
+      <form>
+        <div>
+          <label>Prénom</label>
+          <input id="prenom" />
         </div>
+        <div>
+          <label>Nom</label>
+          <input id="nom" />
+        </div>
+        <div>
+          <label>Email</label>
+          <input id="email" />
+        </div>
+        <div>
+          <label>Votre message</label>
+          <input id="message" />
+        </div>
+        <button class="contact_button" id="submit">
+          Envoyer
+        </button>
+      </form>
+    </div>
+  </div>
 
-        <script src="/scripts/utils/lightbox.js"></script>
-        <script src="/scripts/factories/medias.js"></script>
-        <script src="/scripts/pages/photographer.js"></script>
-        <script src="/scripts/utils/contactForm.js"></script>
+  <script src="/scripts/utils/lightbox.js"></script>
+  <script src="/scripts/factories/medias.js"></script>
+  <script src="/scripts/pages/photographer.js"></script>
+  <script src="/scripts/utils/contactForm.js"></script>
 
-  </body>
+</body>
 
 </html>
