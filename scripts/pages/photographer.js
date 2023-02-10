@@ -59,7 +59,7 @@ async function init() {
     const photoCard = mediasFactory(medias, profil.name);
     const MediasCardDOM = photoCard.getMediasDOM();
     const MediasCardLightbox = photoCard.getMediasLightbox();
-    document.querySelector(".pictures").appendChild(MediasCardDOM);
+    document.querySelector(".pictures_medias").appendChild(MediasCardDOM);
     document.querySelector(".lightbox_container").appendChild(MediasCardLightbox);
   });
 
