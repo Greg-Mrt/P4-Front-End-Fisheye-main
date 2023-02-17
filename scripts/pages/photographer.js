@@ -64,7 +64,7 @@ async function init() {
   });
 
   //gestion de l'ouverture de la lightbox
-  let clickLightbox = document.querySelectorAll(".photos")
+  let clickLightbox = document.querySelectorAll(".photos, .videos")
   for (let i = 0; i < clickLightbox.length; i++) {
     clickLightbox[i].addEventListener("click", () => {
       displayLightbox(i)
@@ -92,3 +92,4 @@ async function init() {
 };
 
 init();
+
