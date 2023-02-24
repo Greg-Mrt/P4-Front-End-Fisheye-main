@@ -11,7 +11,6 @@ function mediasFactory(data, name) {
         medias = `assets/images/${name.split(" ")[0]}/${video}`;
     }
 
-
     function getMediasDOM() {
         const article = document.createElement('article');
         if (image != undefined) {
@@ -72,7 +71,7 @@ function mediasFactory(data, name) {
         return (media);
     }
 
-    return { getMediasDOM, getMediasLightbox }
+    return { getMediasDOM, getMediasLightbox, mediasFactory}
 }
 
 function addLike() {
