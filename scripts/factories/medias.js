@@ -71,7 +71,7 @@ function mediasFactory(data, name) {
         return (media);
     }
 
-    return { getMediasDOM, getMediasLightbox, mediasFactory}
+    return { getMediasDOM, getMediasLightbox, }
 }
 
 function addLike() {
