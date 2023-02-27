@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 function displayLightbox(num=0) {
     const lightbox = document.getElementById("lightbox");
 	lightbox.style.display = "block";

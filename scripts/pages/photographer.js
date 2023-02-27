@@ -1,14 +1,16 @@
+/*global mediasFactory, displayLightbox*/
+
 //Mettre le code JavaScript lié à la page photographer.html
 let params = (new URL(document.location)).searchParams;
 let idUrl = params.get('id');
 
 async function getPhotographers() {
-  const response = await fetch('/data/photographers.json')
+  const response = await fetch('data/photographers.json')
   const fichierjson = await response.json();
   return fichierjson.photographers;
 }
 async function getMedia() {
-  const response = await fetch('/data/photographers.json')
+  const response = await fetch('data/photographers.json')
   const fichierjson = await response.json();
   return fichierjson.media;
 }
@@ -87,9 +89,7 @@ async function init() {
   photographerLikesBox.prepend(photographerLikes);
   photographerLikes.innerHTML = infoLikes;
 
-
-
-};
+}
 
 init();
 

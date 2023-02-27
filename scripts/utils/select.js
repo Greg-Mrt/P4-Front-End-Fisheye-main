@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 window.onload = () => {
     const selectElt = document.querySelector("select");
     const selectDiv = document.querySelector(".custom-select");
