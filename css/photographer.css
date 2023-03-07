@@ -157,22 +157,36 @@ form input {
     border-radius: 5px;
     border:1px solid black;
     background-color: rgb(255, 255, 255);
-    height: 90%;
+    height: 85%;
     margin: auto;
     position: fixed;
-    top: 45px;
+    top: 50px;
     left: 50px;
     right: 50px;
-    padding: 25px 0px 0px 0px;
+    bottom: 50px;
+    padding: 25px;
 }
 
   .lightbox_container {
     overflow: hidden;
-    width: 600px;
-    height: 400px;
+    max-width: 600px;
+    min-width: none;
+    max-height: 600px;
+    min-height: none;
     margin : auto;
     display: flex;
    }
+
+   /* @media (min-width: 30em) and (max-width: 50em){
+    .lightbox_container {
+      overflow: hidden;
+      width: 200px;
+      height: 100px;
+      margin : auto;
+      display: flex;
+
+     }
+   } */
 
   #lightbox {
     display: none;
@@ -208,7 +222,7 @@ form input {
   .photos_lightbox{
     width: 100%;
     height:100%;
-    object-fit: cover;
+    object-fit: contain;
 
   }
 

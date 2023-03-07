@@ -1,14 +1,17 @@
 /*global mediasFactory, displayLightbox*/
 
-//Mettre le code JavaScript lié à la page photographer.html
+//code JavaScript lié à la page photographer.html
 let params = (new URL(document.location)).searchParams;
 let idUrl = params.get('id');
 
+//je reécupère les photographes
 async function getPhotographers() {
   const response = await fetch('data/photographers.json')
   const fichierjson = await response.json();
   return fichierjson.photographers;
 }
+
+//je récupère les medias
 async function getMedia() {
   const response = await fetch('data/photographers.json')
   const fichierjson = await response.json();
@@ -26,6 +29,7 @@ async function init() {
   if (profil == undefined) {
     window.location.href = "/"
   }
+  //je créer les card photographe
   const photographerInfo = document.querySelector(".photographer_profile");
   const photographeHeader = document.createElement("article");
   const picture = `assets/photographers/${profil.portrait}`;

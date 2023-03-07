@@ -1,15 +1,15 @@
 /* eslint-disable no-unused-vars */
+//function pour afficher la lightbox
 function displayLightbox(num=0) {
     const lightbox = document.getElementById("lightbox");
 	lightbox.style.display = "block";
     gotoslide(num);
 }
-
+//function pour fermer la livebox
 function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "none";
 }
-
 
 let compteur = 0
 let medias, slides, slideWidth
@@ -36,6 +36,7 @@ let photos = document.querySelectorAll(".media_lightbox")
     });
 }
 
+// function pour passer à la slide suivante
 function slideNext(){
     let photos = document.querySelectorAll(".media_lightbox")
     compteur++
@@ -50,7 +51,7 @@ function slideNext(){
     });
 
 }
-
+// function pour passer à la slide précédente
 function slidePrev(){
     let photos = document.querySelectorAll(".media_lightbox")
 
@@ -66,6 +67,7 @@ function slidePrev(){
     });
 }
 
+// function pour revenir à la premiere ou accéder à la dernière slide
 function gotoslide(num) {
     let photos = document.querySelectorAll(".media_lightbox")
 

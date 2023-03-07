@@ -1,3 +1,4 @@
+//je récupère et j'affiche les éléments des photographes sur la page photographe
 // eslint-disable-next-line no-unused-vars
 function photographerFactory(data) {
     const { name, portrait, city, country, id, tagline, price } = data;
