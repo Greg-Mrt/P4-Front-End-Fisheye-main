@@ -77,6 +77,8 @@ form input {
   height: 68px;
   border: none;
   border-radius: 5px;
+  font-size: 25px;
+  padding-left: 20px;
 }
 
 .pictures_medias {
@@ -260,12 +262,20 @@ form input {
   margin-left: 10px;
 }
 
+.tri {
+  position: absolute;
+  margin-top: 25px;
+  left: 100px;
+}
+
 .custom-select {
   color: white;
   padding: 7px;
-  border: 1px solid;
   border-radius: 10px;
   width: 200px;
+  position: absolute;
+  margin-top: 10px;
+  left: 180px;
 }
 
 .custom-select select {

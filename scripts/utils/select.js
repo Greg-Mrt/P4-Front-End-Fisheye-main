@@ -74,7 +74,6 @@ window.onload = () => {
             }
             return 0;
         });
-        console.table(medias)
         document.querySelector(".pictures_medias").innerHTML = "";
         document.querySelector(".lightbox_container").innerHTML = "";
         medias.forEach((medias) => {
@@ -86,7 +85,6 @@ window.onload = () => {
         });
         //reinitialisation de la lightbox avec le nouveau tri
         let clickLightbox = document.querySelectorAll(".photos, .videos")
-        console.table(clickLightbox)
         for (let i = 0; i < clickLightbox.length; i++) {
             clickLightbox[i].addEventListener("click", () => {
                 displayLightbox(i)
@@ -133,7 +131,6 @@ window.onload = () => {
             }
             return 0;
         });
-        console.table(medias)
         document.querySelector(".pictures_medias").innerHTML = "";
         document.querySelector(".lightbox_container").innerHTML = "";
         medias.forEach((medias) => {
@@ -145,7 +142,6 @@ window.onload = () => {
         });
         //reinitialisation de la lightbox avec le nouveau tri
         let clickLightbox = document.querySelectorAll(".photos, .videos")
-        console.table(clickLightbox)
         for (let i = 0; i < clickLightbox.length; i++) {
             clickLightbox[i].addEventListener("click", () => {
                 displayLightbox(i)
@@ -192,7 +188,6 @@ window.onload = () => {
             }
             return 0;
         });
-        console.table(medias)
         document.querySelector(".pictures_medias").innerHTML = "";
         document.querySelector(".lightbox_container").innerHTML = "";
         medias.forEach((medias) => {
@@ -204,7 +199,6 @@ window.onload = () => {
         });
         //reinitialisation de la lightbox avec le nouveau tri
         let clickLightbox = document.querySelectorAll(".photos, .videos")
-        console.table(clickLightbox)
         for (let i = 0; i < clickLightbox.length; i++) {
             clickLightbox[i].addEventListener("click", () => {
                 displayLightbox(i)

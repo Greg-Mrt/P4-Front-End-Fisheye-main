@@ -2,7 +2,7 @@
 //function pour afficher la lightbox
 function displayLightbox(num = 0) {
     const lightbox = document.getElementById("lightbox");
-    lightbox.style.display = "block";
+    lightbox.style.display = "flex";
     gotoslide(num);
 }
 //function pour fermer la livebox
