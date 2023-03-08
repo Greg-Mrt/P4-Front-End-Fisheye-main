@@ -18,6 +18,7 @@ function mediasFactory(data, name) {
         if (image != undefined) {
             const image = document.createElement('img');
             image.setAttribute("src", medias);
+            image.setAttribute("tabIndex","0");
             image.className = 'photos';
             article.appendChild(image);
         }
@@ -26,6 +27,7 @@ function mediasFactory(data, name) {
             const source = document.createElement('source');
             source.setAttribute("src", medias);
             video.className = 'videos';
+            video.setAttribute("tabIndex","0");
             video.appendChild(source);
             article.appendChild(video);
         }
@@ -39,6 +41,7 @@ function mediasFactory(data, name) {
         const img = document.createElement('img');
         img.setAttribute("src", coeur);
         img.className = 'coeur';
+        img.setAttribute("tabIndex","0");
         img.addEventListener("click", addLike);
         img.addEventListener("click", photoLike);
         legende.classList.add("media_infos");
@@ -48,6 +51,7 @@ function mediasFactory(data, name) {
         article.appendChild(legende);
         return (article);
     }
+
     //on met en place la lightbox avec les medias
     function getMediasLightbox() {
         const media = document.createElement('div');
@@ -87,4 +91,3 @@ function photoLike(e) {
     addHeart = parseInt(addHeart) + 1;
     e.target.previousSibling.textContent = addHeart;
 }
-

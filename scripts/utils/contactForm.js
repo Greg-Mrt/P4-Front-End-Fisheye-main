@@ -10,6 +10,13 @@ function closeModal() {
   modal.style.display = "none";
 }
 
+//On ferme la livebox en pressant la touche Escape
+document.addEventListener('keydown', function(event) {
+  if (event.code === "Escape") {
+    closeModal()
+  }
+});
+
 //check "prénom" data
 function FirstName() {
   let inputValue = document.getElementById("prenom").value;

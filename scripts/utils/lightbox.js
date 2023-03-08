@@ -5,11 +5,20 @@ function displayLightbox(num = 0) {
     lightbox.style.display = "flex";
     gotoslide(num);
 }
+
 //function pour fermer la livebox
 function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
     lightbox.style.display = "none";
 }
+
+//On ferme la livebox en pressant la touche Escape
+document.addEventListener('keydown', function(event) {
+    if (event.code === "Escape") {
+        closeLightbox()
+    }
+  });
+
 
 //mise en place du compteur et la fonction de défilement 
 let compteur = 0
@@ -52,6 +61,14 @@ function slideNext() {
     });
 
 }
+
+//On passe à la slide suivante en pressant la fleche droite
+document.addEventListener('keydown', function(event) {
+    if (event.code === "ArrowRight") {
+        slideNext()
+    }
+  });
+
 // function pour passer à la slide précédente
 function slidePrev() {
     let photos = document.querySelectorAll(".media_lightbox")
@@ -67,6 +84,14 @@ function slidePrev() {
         element.style.transform = `translateX(${decal}px)`;
     });
 }
+
+//On passe à la slide précédente en pressant la fleche gauche
+document.addEventListener('keydown', function(event) {
+    if (event.code === "ArrowLeft") {
+        slidePrev()
+    }
+  });
+
 
 // function pour revenir à la premiere ou accéder à la dernière slide
 function gotoslide(num) {
