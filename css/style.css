@@ -19,7 +19,7 @@ h1 {
     margin-right: 100px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -60,7 +60,7 @@ a{
     height: 200px;
     width: 200px;
     border-radius: 50%;
-    object-fit:cover;
+    object-fit: cover;
 }
 
 .slogan {
@@ -69,10 +69,8 @@ a{
     margin: 5px;
 }
 
-.prix{
+.prix {
     color: grey;
     font-size: 11px;
     margin: 0px;
 }
-
-      

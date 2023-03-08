@@ -1,4 +1,5 @@
-// eslint-disable-next-line no-unused-vars
+/* eslint-disable no-unused-vars */
+//on récupère les medias et les données associées
 function mediasFactory(data, name) {
     const { image, video, title, likes } = data;
 
@@ -11,7 +12,7 @@ function mediasFactory(data, name) {
     else {
         medias = `assets/images/${name.split(" ")[0]}/${video}`;
     }
-
+    //on affiche les medias avec les données associés
     function getMediasDOM() {
         const article = document.createElement('article');
         if (image != undefined) {
@@ -47,7 +48,7 @@ function mediasFactory(data, name) {
         article.appendChild(legende);
         return (article);
     }
-
+    //on met en place la lightbox avec les medias
     function getMediasLightbox() {
         const media = document.createElement('div');
         media.className = 'media_lightbox';
@@ -74,13 +75,13 @@ function mediasFactory(data, name) {
 
     return { getMediasDOM, getMediasLightbox, }
 }
-
+//fonction pour ajouter les likes au total 
 function addLike() {
     let like = document.querySelector(".totalLikes").textContent;
     like = parseInt(like) + 1;
     document.querySelector(".totalLikes").textContent = like;
 }
-
+//fonction pour ajouter les likes à coté de la photo
 function photoLike(e) {
     let addHeart = e.target.previousSibling.textContent;
     addHeart = parseInt(addHeart) + 1;

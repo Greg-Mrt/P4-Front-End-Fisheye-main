@@ -7,13 +7,14 @@
   <link rel="icon" type="image/png" href="assets/favicon.png">
   <link href="https://fonts.googleapis.com/css?family=DM+Sans&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-  integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
   <title>Photographe</title>
 </head>
 
 <body>
   <header>
-    <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="logo Fisheye rouge avec un appareil photo à la place de la lettre e" role="img" alt=""/></a>
+    <a href="index.html"><img src="assets/images/logo.png" class="logo"
+        aria-label="logo Fisheye rouge avec un appareil photo à la place de la lettre e" role="img" alt="" /></a>
   </header>
 
   <main id="main" aria-label="contenu principal" role="main">
@@ -26,18 +27,18 @@
     </div>
 
     <span>Trier par</span>
-      <div class="custom-select">
-        <select name="" id="">
-          <option value="1" id="titre">Titre</option>
-          <option value="2" id="date">Date</option>
-          <option value="3" id="likes">Popularité</option>
-        </select>
-      </div>
+    <div class="custom-select">
+      <select name="" id="">
+        <option value="1" id="titre">Titre</option>
+        <option value="2" id="date">Date</option>
+        <option value="3" id="likes">Popularité</option>
+      </select>
+    </div>
 
-      <div class="pictures_medias"></div>
+    <div class="pictures_medias"></div>
   </main>
 
-  <div id="lightbox" class="lightbox">
+  <div id="lightbox" class="lightbox" style="display: flex;">
     <img class="closeLightbox" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()"
       aria-label="bouton de fermeture" role="fermeture" />
     <img class="arrow_left" src="assets/icons/left.svg" aria-label="media précédent" role="navigation"

@@ -79,10 +79,10 @@ async function init() {
 
 
   //calcul des likes
-    let totalLikes = 0
-    medias.forEach((media) => {
-      totalLikes += media.likes
-    });
+  let totalLikes = 0
+  medias.forEach((media) => {
+    totalLikes += media.likes
+  });
 
   //j'affiche les élements dans la likebox
   const photographerLikesBox = document.querySelector(".box");

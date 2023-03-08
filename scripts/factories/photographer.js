@@ -1,4 +1,4 @@
-//je récupère et j'affiche les éléments des photographes sur la page photographe
+//fonction pour récupérer et afficher les éléments des photographes sur la page photographe
 // eslint-disable-next-line no-unused-vars
 function photographerFactory(data) {
     const { name, portrait, city, country, id, tagline, price } = data;
@@ -6,12 +6,12 @@ function photographerFactory(data) {
     const picture = `assets/photographers/${portrait}`;
 
     function getUserCardDOM() {
-        const article = document.createElement( 'article' );
+        const article = document.createElement('article');
         const lien = document.createElement('a');
-        lien.setAttribute("href","photographer.html?id="+id)
-        const img = document.createElement( 'img' );
+        lien.setAttribute("href", "photographer.html?id=" + id)
+        const img = document.createElement('img');
         img.setAttribute("src", picture)
-        const h2 = document.createElement( 'h2' );
+        const h2 = document.createElement('h2');
         h2.textContent = name;
         const h3 = document.createElement('h3');
         h3.textContent = `${city}, ${country}`;
@@ -19,7 +19,7 @@ function photographerFactory(data) {
         slogan.textContent = tagline;
         slogan.classList.add("slogan");
         const prix = document.createElement('p');
-        prix.textContent = price+" €/jour";
+        prix.textContent = price + " €/jour";
         prix.classList.add("prix");
         lien.appendChild(img);
         lien.appendChild(h2);
@@ -29,7 +29,7 @@ function photographerFactory(data) {
         article.appendChild(prix);
         return (article);
     }
-    return {name, picture, getUserCardDOM }
+    return { name, picture, getUserCardDOM }
 
 }
 

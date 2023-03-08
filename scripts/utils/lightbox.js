@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 //function pour afficher la lightbox
-function displayLightbox(num=0) {
+function displayLightbox(num = 0) {
     const lightbox = document.getElementById("lightbox");
-	lightbox.style.display = "block";
+    lightbox.style.display = "block";
     gotoslide(num);
 }
 //function pour fermer la livebox
@@ -11,6 +11,7 @@ function closeLightbox() {
     lightbox.style.display = "none";
 }
 
+//mise en place du compteur et la fonction de défilement 
 let compteur = 0
 let medias, slides, slideWidth
 medias = document.querySelector(".lightbox_container")
@@ -27,9 +28,9 @@ window.onload = () => {
     next.addEventListener("click", slideNext)
     prev.addEventListener("click", slidePrev)
 
-    let decal = -slideWidth*compteur
+    let decal = -slideWidth * compteur
 
-let photos = document.querySelectorAll(".media_lightbox")
+    let photos = document.querySelectorAll(".media_lightbox")
 
     photos.forEach(element => {
         element.style.transform = `translateX(${decal}px)`;
@@ -37,14 +38,14 @@ let photos = document.querySelectorAll(".media_lightbox")
 }
 
 // function pour passer à la slide suivante
-function slideNext(){
+function slideNext() {
     let photos = document.querySelectorAll(".media_lightbox")
     compteur++
-    if(compteur == photos.length){
-        compteur=0
+    if (compteur == photos.length) {
+        compteur = 0
     }
     slideWidth = medias.getBoundingClientRect().width
-    let decal = -slideWidth*compteur
+    let decal = -slideWidth * compteur
 
     photos.forEach(element => {
         element.style.transform = `translateX(${decal}px)`;
@@ -52,11 +53,11 @@ function slideNext(){
 
 }
 // function pour passer à la slide précédente
-function slidePrev(){
+function slidePrev() {
     let photos = document.querySelectorAll(".media_lightbox")
 
     compteur--
-    if(compteur < 0){
+    if (compteur < 0) {
         compteur = photos.length - 1
     }
     slideWidth = medias.getBoundingClientRect().width
@@ -71,12 +72,12 @@ function slidePrev(){
 function gotoslide(num) {
     let photos = document.querySelectorAll(".media_lightbox")
 
-    compteur=num
-    if(compteur < 0){
+    compteur = num
+    if (compteur < 0) {
         compteur = photos.length - 1
     }
-    if(compteur >= photos.length){
-        compteur=0
+    if (compteur >= photos.length) {
+        compteur = 0
     }
     slideWidth = medias.getBoundingClientRect().width
     let decal = -slideWidth * compteur
