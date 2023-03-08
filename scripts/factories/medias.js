@@ -68,7 +68,7 @@ function mediasFactory(data, name) {
         }
         const h2 = document.createElement('div');
         h2.textContent = `${title}`;
-        h2.classList.add("media_infos");
+        h2.classList.add("media_infos_lightbox");
         media.appendChild(h2);
         return (media);
     }
