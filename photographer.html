@@ -13,8 +13,7 @@
 
 <body>
   <header>
-    <a href="index.html"><img src="assets/images/logo.png" class="logo"
-        aria-label="logo Fisheye rouge avec un appareil photo à la place de la lettre e" role="img" alt="" /></a>
+    <a href="index.html"><img src="assets/images/logo.png" class="logo" aria-label="logo Fisheye rouge avec un appareil photo à la place de la lettre e" role="img" alt="logo du site Fisheye"/></a>
   </header>
 
   <main id="main" aria-label="contenu principal" role="main">
@@ -28,7 +27,7 @@
 
     <span class="tri">Trier par</span>
     <div class="custom-select" tabindex="0">
-      <select name="" id="">
+      <select name="" id="" label="Tri">
         <option value="1" id="titre">Titre</option>
         <option value="2" id="date">Date</option>
         <option value="3" id="likes">Popularité</option>
@@ -40,7 +39,7 @@
   </main>
 
   <div id="lightbox" class="lightbox">
-    <img class="closeLightbox" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()"
+    <img class="closeLightbox" alt="croix rouge" id="closeLightbox" src="assets/icons/closeLightbox.svg" onclick="closeLightbox()"
       aria-label="bouton de fermeture" role="fermeture" />
     <img class="arrow_left" src="assets/icons/left.svg" aria-label="media précédent" role="navigation"
       alt="media précédent" />
@@ -57,24 +56,24 @@
     <div class="modal">
       <header>
         <h2>Contactez-moi</h2>
-        <img src="assets/icons/close.svg" onclick="closeModal()" aria-label="bouton de fermeture" role="fermeture" />
+        <img src="assets/icons/close.svg" alt="croix blanche" onclick="closeModal()" aria-label="bouton de fermeture" role="fermeture" />
       </header>
       <form>
         <div>
           <label>Prénom</label>
-          <input id="prenom" />
+          <input id="prenom" label="Prénom"/>
         </div>
         <div>
           <label>Nom</label>
-          <input id="nom" />
+          <input id="nom" label="Nom"/>
         </div>
         <div>
           <label>Email</label>
-          <input id="email" />
+          <input id="email" label="E-mail"/>
         </div>
         <div>
           <label>Votre message</label>
-          <input id="message" />
+          <input id="message" label="Message"/>
         </div>
         <button class="contact_button" id="submit">
           Envoyer
