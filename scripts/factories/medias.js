@@ -42,8 +42,18 @@ function mediasFactory(data, name) {
         img.setAttribute("src", coeur);
         img.className = 'coeur';
         img.setAttribute("tabIndex","0");
+        img.setAttribute("data-liked", "false");
         img.addEventListener("click", addLike);
-        img.addEventListener("click", photoLike);
+        img.addEventListener("click", function() {
+            toggleLike(img);
+        });
+        img.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                addLike();
+                toggleLike(img);
+            }
+        });
+        // img.addEventListener("click", photoLike);
         legende.classList.add("media_infos");
         legende.appendChild(titre);
         legende.appendChild(nbLikes);
@@ -80,29 +90,58 @@ function mediasFactory(data, name) {
     return { getMediasDOM, getMediasLightbox, }
 }
 //fonction pour ajouter les likes au total 
-function addLike() {
+  function addLike() {
     let like = document.querySelector(".totalLikes").textContent;
     like = parseInt(like) + 1;
     document.querySelector(".totalLikes").textContent = like;
 }
 
-function dislike() {
+  function dislike() {
     let like = document.querySelector(".totalLikes").textContent;
     like = parseInt(like) - 1;
     document.querySelector(".totalLikes").textContent = like;
 }
 
+function toggleLike(img) {
+    const isLiked = img.dataset.liked === 'true';
+    const nbLikes = img.parentElement.querySelector('.likes');
 
-
-//fonction pour ajouter les likes à coté de la photo
-function photoLike(e) {
-    let addHeart = e.target.previousSibling.textContent;
-    addHeart = parseInt(addHeart) + 1;
-    e.target.previousSibling.textContent = addHeart;
+    if (isLiked) {
+        img.setAttribute('src', 'assets/icons/heart.svg');
+        dislike();
+        nbLikes.textContent = parseInt(nbLikes.textContent) - 1;
+        img.dataset.liked = 'false';
+    } else {
+        img.setAttribute('src', 'assets/icons/heart.svg');
+        addLike();
+        nbLikes.textContent = parseInt(nbLikes.textContent) + 1;
+        img.dataset.liked = 'true';
+    }
 }
 
-function photoDislike(e) {
-    let addHeart = e.target.previousSibling.textContent;
-    addHeart = parseInt(addHeart) - 1;
-    e.target.previousSibling.textContent = addHeart;
-}
+
+
+// //fonction pour ajouter les likes à coté de la photo
+// function toggleLike(img) {
+//     const isLiked = img.dataset.liked === 'true';
+    
+//     if (isLiked) {
+//         photoDislike(img);
+//       img.dataset.liked = 'false';
+//     } else {
+//         photoLike(img);
+//       img.dataset.liked = 'true';
+//     }
+//   }
+  
+//   function photoLike(e) {
+//     let addHeart = e.target.previousSibling.textContent;
+//     addHeart = parseInt(addHeart) + 1;
+//     e.target.previousSibling.textContent = addHeart;
+// }
+
+// // function photoDislike(e) {
+// //     let addHeart = e.target.previousSibling.textContent;
+// //     addHeart = parseInt(addHeart) - 1;
+// //     e.target.previousSibling.textContent = addHeart;
+// }

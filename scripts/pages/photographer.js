@@ -85,13 +85,22 @@ async function init() {
         }
       });
     }
-    
-    
+        
   //calcul des likes
-  let totalLikes = 0
-  medias.forEach((media) => {
-    totalLikes += media.likes
-  });
+ let totalLikes = 0;
+medias.forEach((media) => {
+    totalLikes += media.likes;
+});
+
+// function addLike() {
+//     totalLikes += 1;
+//     document.querySelector(".totalLikes").textContent = totalLikes;
+// }
+
+// function dislike() {
+//     totalLikes -= 1;
+//     document.querySelector(".totalLikes").textContent = totalLikes;
+// }
 
   //j'affiche les élements dans la likebox
   const photographerLikesBox = document.querySelector(".box");
@@ -105,4 +114,5 @@ async function init() {
 }
 
 init();
+
 
