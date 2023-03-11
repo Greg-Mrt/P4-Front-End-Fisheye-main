@@ -77,7 +77,16 @@ async function init() {
     })
   }
 
-
+    let openLightbox = document.querySelectorAll(".photos, .videos");
+    for (let i = 0; i < clickLightbox.length; i++) {
+      openLightbox[i].addEventListener('keydown', function(event) {
+        if (event.keyCode === 13) {
+            displayLightbox(i)
+        }
+      });
+    }
+    
+    
   //calcul des likes
   let totalLikes = 0
   medias.forEach((media) => {

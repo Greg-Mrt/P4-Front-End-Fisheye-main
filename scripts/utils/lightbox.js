@@ -6,6 +6,8 @@ function displayLightbox(num = 0) {
     gotoslide(num);
 }
 
+
+
 //function pour fermer la livebox
 function closeLightbox() {
     const lightbox = document.getElementById("lightbox");
@@ -13,11 +15,11 @@ function closeLightbox() {
 }
 
 //On ferme la livebox en pressant la touche Escape
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.code === "Escape") {
         closeLightbox()
     }
-  });
+});
 
 
 //mise en place du compteur et la fonction de défilement 
@@ -63,11 +65,11 @@ function slideNext() {
 }
 
 //On passe à la slide suivante en pressant la fleche droite
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.code === "ArrowRight") {
         slideNext()
     }
-  });
+});
 
 // function pour passer à la slide précédente
 function slidePrev() {
@@ -86,11 +88,11 @@ function slidePrev() {
 }
 
 //On passe à la slide précédente en pressant la fleche gauche
-document.addEventListener('keydown', function(event) {
+document.addEventListener('keydown', function (event) {
     if (event.code === "ArrowLeft") {
         slidePrev()
     }
-  });
+});
 
 
 // function pour revenir à la premiere ou accéder à la dernière slide

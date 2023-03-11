@@ -85,9 +85,24 @@ function addLike() {
     like = parseInt(like) + 1;
     document.querySelector(".totalLikes").textContent = like;
 }
+
+function dislike() {
+    let like = document.querySelector(".totalLikes").textContent;
+    like = parseInt(like) - 1;
+    document.querySelector(".totalLikes").textContent = like;
+}
+
+
+
 //fonction pour ajouter les likes à coté de la photo
 function photoLike(e) {
     let addHeart = e.target.previousSibling.textContent;
     addHeart = parseInt(addHeart) + 1;
+    e.target.previousSibling.textContent = addHeart;
+}
+
+function photoDislike(e) {
+    let addHeart = e.target.previousSibling.textContent;
+    addHeart = parseInt(addHeart) - 1;
     e.target.previousSibling.textContent = addHeart;
 }
