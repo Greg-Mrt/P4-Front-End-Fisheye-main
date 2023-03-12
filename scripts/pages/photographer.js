@@ -87,22 +87,9 @@ async function init() {
     }
         
   //calcul des likes
- let totalLikes = 0;
-medias.forEach((media) => {
-    totalLikes += media.likes;
-});
+  const totalLikes = getTotalLikes();
 
-// function addLike() {
-//     totalLikes += 1;
-//     document.querySelector(".totalLikes").textContent = totalLikes;
-// }
-
-// function dislike() {
-//     totalLikes -= 1;
-//     document.querySelector(".totalLikes").textContent = totalLikes;
-// }
-
-  //j'affiche les élements dans la likebox
+//j'affiche les élements dans la likebox
   const photographerLikesBox = document.querySelector(".box");
   const photographerLikes = document.createElement("div");
   let infoLikes = `<div class="boxInfos"> 
@@ -114,5 +101,3 @@ medias.forEach((media) => {
 }
 
 init();
-
-

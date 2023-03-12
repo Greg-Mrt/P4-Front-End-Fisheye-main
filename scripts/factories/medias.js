@@ -90,13 +90,22 @@ function mediasFactory(data, name) {
     return { getMediasDOM, getMediasLightbox, }
 }
 //fonction pour ajouter les likes au total 
-  function addLike() {
+function getTotalLikes() {
+    const likeElements = document.querySelectorAll(".likes");
+    let totalLikes = 0;
+    likeElements.forEach((element) => {
+        totalLikes += parseInt(element.textContent);
+    });
+    return totalLikes;
+}
+
+function addLike() {
     let like = document.querySelector(".totalLikes").textContent;
     like = parseInt(like) + 1;
     document.querySelector(".totalLikes").textContent = like;
 }
 
-  function dislike() {
+function dislike() {
     let like = document.querySelector(".totalLikes").textContent;
     like = parseInt(like) - 1;
     document.querySelector(".totalLikes").textContent = like;
@@ -113,34 +122,11 @@ function toggleLike(img) {
         img.dataset.liked = 'false';
     } else {
         img.setAttribute('src', 'assets/icons/heart.svg');
+        addLike();
         nbLikes.textContent = parseInt(nbLikes.textContent) + 1;
         img.dataset.liked = 'true';
     }
+
+    const totalLikes = getTotalLikes();
+    document.querySelector(".totalLikes").textContent = totalLikes;
 }
-
-
-
-// //fonction pour ajouter les likes à coté de la photo
-// function toggleLike(img) {
-//     const isLiked = img.dataset.liked === 'true';
-    
-//     if (isLiked) {
-//         photoDislike(img);
-//       img.dataset.liked = 'false';
-//     } else {
-//         photoLike(img);
-//       img.dataset.liked = 'true';
-//     }
-//   }
-  
-//   function photoLike(e) {
-//     let addHeart = e.target.previousSibling.textContent;
-//     addHeart = parseInt(addHeart) + 1;
-//     e.target.previousSibling.textContent = addHeart;
-// }
-
-// // function photoDislike(e) {
-// //     let addHeart = e.target.previousSibling.textContent;
-// //     addHeart = parseInt(addHeart) - 1;
-// //     e.target.previousSibling.textContent = addHeart;
-// }
