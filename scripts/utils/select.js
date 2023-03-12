@@ -2,38 +2,25 @@
 /* eslint-disable no-undef */
 //Mise en place de l'élément select
 window.onload = () => {
-    const selectElt = document.querySelector("select");
-    const selectDiv = document.querySelector(".custom-select");
-    const newSelect = document.createElement("div");
-    newSelect.classList.add("new-select");
-    newSelect.innerHTML = selectElt.options[selectElt.selectedIndex].innerHTML;
-    selectDiv.appendChild(newSelect);
+    const select = document.querySelector("select");
 
-    const newMenu = document.createElement("div");
-    newMenu.classList.add("select-items", "select-hide");
-    for (let option of selectElt.options) {
-        const newOption = document.createElement("div");
-        newOption.innerHTML = option.innerHTML;
-        newOption.id = option.id + "-new";
-        newOption.addEventListener("click", function () {
-            for (let option of selectElt.options) {
-                if (option.innerHTML === this.innerHTML) {
-                    selectElt.selectedIndex = option.index;
-                    newSelect.innerHTML = this.innerHTML;
-                    break;
-                }
-            }
-            newSelect.click();
-        })
-        newMenu.appendChild(newOption);
-    }
-    selectDiv.appendChild(newMenu);
-
-    newSelect.addEventListener("click", function (e) {
-        e.stopPropagation();
-        this.nextSibling.classList.toggle("select-hide");
-        this.classList.toggle("active");
-    })
+select.addEventListener("change", (event) => {
+  const value = event.target.value;
+  switch (value) {
+    case "likes":
+      likeSort();
+      break;
+    case "date":
+      dateSort();
+      break;
+    case "titre":
+      titleSort();
+      break;
+    default:
+      break;
+  }
+});
+    let compteur = 0;
     //initialisation de la lightbox
     const lightbox = document.querySelector(".lightbox")
     slides = Array.from(document.querySelector(".lightbox_container").children)
@@ -55,7 +42,7 @@ window.onload = () => {
     });
 
     //function de tri par popularité
-    const like = document.querySelector("#likes-new")
+    const like = document.querySelector("#likes")
     async function likeSort() {
         const photographers = await getPhotographers();
         const profil = photographers.find((photo) =>
@@ -90,6 +77,7 @@ window.onload = () => {
                 displayLightbox(i)
             })
         }
+
         const lightbox = document.querySelector(".lightbox")
         slides = Array.from(document.querySelector(".lightbox_container").children)
 
@@ -108,11 +96,20 @@ window.onload = () => {
         photos.forEach(element => {
             element.style.transform = `translateX(${decal}px)`;
         });
+
+        let openLightbox = document.querySelectorAll(".photos, .videos");
+        for (let i = 0; i < clickLightbox.length; i++) {
+          openLightbox[i].addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                displayLightbox(i)
+            }
+          });
+        }
     }
     like.addEventListener("click", likeSort)
 
     //function de tri par titre
-    const titles = document.querySelector("#titre-new")
+    const titles = document.querySelector("#titre")
     async function titleSort() {
         const photographers = await getPhotographers();
         const profil = photographers.find((photo) =>
@@ -147,6 +144,15 @@ window.onload = () => {
                 displayLightbox(i)
             })
         }
+
+        let openLightbox = document.querySelectorAll(".photos, .videos");
+        for (let i = 0; i < clickLightbox.length; i++) {
+          openLightbox[i].addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                displayLightbox(i)
+            }
+          });
+        }
         const lightbox = document.querySelector(".lightbox")
         slides = Array.from(document.querySelector(".lightbox_container").children)
 
@@ -169,7 +175,7 @@ window.onload = () => {
     titles.addEventListener("click", titleSort)
 
     //function de tri par date
-    const mediaDate = document.querySelector("#date-new")
+    const mediaDate = document.querySelector("#date");
     async function dateSort() {
         const photographers = await getPhotographers();
         const profil = photographers.find((photo) =>
@@ -178,7 +184,7 @@ window.onload = () => {
         const mediaSource = await getMedia();
         let medias = mediaSource.filter((m) =>
             m.photographerId == idUrl
-        )
+        );
         medias = medias.sort(function (a, b) {
             if (a.date < b.date) {
                 return 1;
@@ -204,6 +210,15 @@ window.onload = () => {
                 displayLightbox(i)
             })
         }
+
+        let openLightbox = document.querySelectorAll(".photos, .videos");
+        for (let i = 0; i < clickLightbox.length; i++) {
+          openLightbox[i].addEventListener('keydown', function(event) {
+            if (event.keyCode === 13) {
+                displayLightbox(i)
+            }
+          });
+        }
         const lightbox = document.querySelector(".lightbox")
         slides = Array.from(document.querySelector(".lightbox_container").children)
 
@@ -222,9 +237,7 @@ window.onload = () => {
         photos.forEach(element => {
             element.style.transform = `translateX(${decal}px)`;
         });
+        
     }
-    mediaDate.addEventListener("click", dateSort)
-
+    mediaDate.addEventListener("click", dateSort);
 }
-
-
