@@ -113,7 +113,6 @@ function toggleLike(img) {
         img.dataset.liked = 'false';
     } else {
         img.setAttribute('src', 'assets/icons/heart.svg');
-        addLike();
         nbLikes.textContent = parseInt(nbLikes.textContent) + 1;
         img.dataset.liked = 'true';
     }
