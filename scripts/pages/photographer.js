@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /*global mediasFactory, displayLightbox*/
 
 //code JavaScript lié à la page photographer.html
