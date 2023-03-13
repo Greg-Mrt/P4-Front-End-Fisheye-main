@@ -71,6 +71,7 @@ function mediasFactory(data, name) {
         if (image != undefined) {
             const image = document.createElement('img');
             image.setAttribute("src", medias);
+            image.setAttribute("alt", title);
             image.className = 'photos_lightbox';
             media.appendChild(image);
         }

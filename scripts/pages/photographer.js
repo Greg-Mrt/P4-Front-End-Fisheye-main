@@ -36,6 +36,7 @@ async function init() {
   const picture = `assets/photographers/${profil.portrait}`;
   const img = document.createElement('img');
   img.setAttribute("src", picture);
+  img.setAttribute("alt", profil.name);
   img.classList.add("profilePicture");
   let info = `<h1 class ="photographer_name">${profil.name}</h1>
             <p class="photographer_location">${profil.city}, ${profil.country}</p>
