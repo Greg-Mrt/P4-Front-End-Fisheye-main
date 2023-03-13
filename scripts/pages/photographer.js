@@ -95,7 +95,7 @@ async function init() {
   const photographerLikesBox = document.querySelector(".box");
   const photographerLikes = document.createElement("div");
   let infoLikes = `<div class="boxInfos"> 
-  <div class=""><span class="totalLikes">${totalLikes}</span> <img src="assets/icons/heart-solid.svg" width="18px" height="18px"></div>
+  <div class=""><span class="totalLikes">${totalLikes}</span> <img src="assets/icons/heart-solid.svg" alt="like" width="18px" height="18px"></div>
   <div class="boxPrice">${profil.price}€ / jour</div></div>`;
   photographerLikesBox.prepend(photographerLikes);
   photographerLikes.innerHTML = infoLikes;
