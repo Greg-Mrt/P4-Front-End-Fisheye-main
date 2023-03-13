@@ -18,6 +18,7 @@ function mediasFactory(data, name) {
         if (image != undefined) {
             const image = document.createElement('img');
             image.setAttribute("src", medias);
+            image.setAttribute("alt", title);
             image.setAttribute("tabIndex","0");
             image.className = 'photos';
             article.appendChild(image);
@@ -40,6 +41,7 @@ function mediasFactory(data, name) {
         nbLikes.textContent = likes;
         const img = document.createElement('img');
         img.setAttribute("src", coeur);
+        img.setAttribute("alt", "Cliquez pour liker");
         img.className = 'coeur';
         img.setAttribute("tabIndex","0");
         img.setAttribute("data-liked", "false");
